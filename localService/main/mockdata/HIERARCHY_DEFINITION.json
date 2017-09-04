@@ -1,0 +1,124 @@
+{
+    "d": {
+        "results": [{
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_DEFINITIONType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(2)"
+            },
+            "HIERARCHY_ID": 2,
+            "HIERARCHY_NAME": "AMHierSample5280",
+            "SYST": "SWP01",
+            "MANDT": "100",
+            "ARE": "5280",
+            "HIERARCHY_TYPE_ID": 2,
+            "IS_PRIVATE": 0,
+            "HIER_DETAILS": {
+                "__deferred": {
+                    "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(2)/HIER_DETAILS"
+                }
+            }
+        }, {
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_DEFINITIONType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(3)"
+            },
+            "HIERARCHY_ID": 3,
+            "HIERARCHY_NAME": "LCB-ARE",
+            "SYST": "",
+            "MANDT": "",
+            "ARE": "",
+            "HIERARCHY_TYPE_ID": 1,
+            "IS_PRIVATE": 0,
+            "HIER_DETAILS": {
+                "__deferred": {
+                    "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(3)/HIER_DETAILS"
+                }
+            }
+        }, {
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_DEFINITIONType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(4)"
+            },
+            "HIERARCHY_ID": 4,
+            "HIERARCHY_NAME": "LCB-GID",
+            "SYST": "",
+            "MANDT": "",
+            "ARE": "",
+            "HIERARCHY_TYPE_ID": 1,
+            "IS_PRIVATE": 0,
+            "HIER_DETAILS": {
+                "__deferred": {
+                    "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(4)/HIER_DETAILS"
+                }
+            }
+        }, {
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_DEFINITIONType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(6)"
+            },
+            "HIERARCHY_ID": 6,
+            "HIERARCHY_NAME": "MEI TEST",
+            "SYST": "",
+            "MANDT": "",
+            "ARE": "4711",
+            "HIERARCHY_TYPE_ID": 1,
+            "IS_PRIVATE": 1,
+            "HIER_DETAILS": {
+                "__deferred": {
+                    "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(6)/HIER_DETAILS"
+                }
+            }
+        }, {
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_DEFINITIONType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(13)"
+            },
+            "HIERARCHY_ID": 13,
+            "HIERARCHY_NAME": "my_hist_test",
+            "SYST": "Z001N",
+            "MANDT": null,
+            "ARE": null,
+            "HIERARCHY_TYPE_ID": 1,
+            "IS_PRIVATE": 0,
+            "HIER_DETAILS": {
+                "__deferred": {
+                    "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(13)/HIER_DETAILS"
+                }
+            }
+        }, {
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_DEFINITIONType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(16)"
+            },
+            "HIERARCHY_ID": 16,
+            "HIERARCHY_NAME": "my_hist_test_par1",
+            "SYST": null,
+            "MANDT": null,
+            "ARE": null,
+            "HIERARCHY_TYPE_ID": 1,
+            "IS_PRIVATE": 0,
+            "HIER_DETAILS": {
+                "__deferred": {
+                    "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(16)/HIER_DETAILS"
+                }
+            }
+        }, {
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_DEFINITIONType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(17)"
+            },
+            "HIERARCHY_ID": 17,
+            "HIERARCHY_NAME": "my_hist_test_par2",
+            "SYST": null,
+            "MANDT": null,
+            "ARE": null,
+            "HIERARCHY_TYPE_ID": 1,
+            "IS_PRIVATE": 0,
+            "HIER_DETAILS": {
+                "__deferred": {
+                    "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_DEFINITION(17)/HIER_DETAILS"
+                }
+            }
+        }]
+    }
+}

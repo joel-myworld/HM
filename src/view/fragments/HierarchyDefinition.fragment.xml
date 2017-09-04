@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog id="siemensUiPopupDialog" beforeClose="disableOperation"
+		title="{= ${HIERARCHY_NAME} ? ${HIERARCHY_NAME} : 'New Hierarchy' }"
+		class="sapUiPopupWithPadding">
+		<content>
+
+			<f:SimpleForm id="siemensUiSimpleForm" minWidth="1024"
+				maxContainerCols="4" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+				columnsL="2" columnsM="2" class="editableForm">
+				<f:content>
+					<Label text="{i18n>hierarchy_id}" />
+                <Input value="{HIERARCHY_ID}" enabled="false" />
+                <Label text="{i18n>system}" />
+                <Input value="{SYST}"/>
+                <Label text="{i18n>hierarchy_name}" />
+                <Input value="{HIERARCHY_NAME}" />
+                <Label text="{i18n>client}" />
+                <Input value="{MANDT}" />
+                <Label text="{i18n>are}" />
+                <Input value="{ARE}" />
+                <Label text="{i18n>hierarchy_type}"/>
+                <Select selectedKey="{HIERARCHY_TYPE_ID}">
+                    <core:Item key="1" text="PARENT-CHILD" />
+                    <core:Item key="2" text="LEVEL" />
+                </Select>
+                <Label text="{i18n>private}" />
+                <Select selectedKey="{IS_PRIVATE}">
+                    <core:Item key="0" text="{i18n>Yes}" />
+                    <core:Item key="1" text="{i18n>No}" />
+                </Select>
+                <Label text="{i18n>Project}" required="true"/>
+					<Input
+						value="{path : 'PROJECT',
+								type : 'sap.ui.model.type.String',
+                				constraints : {
+            									minLength: 1
+          						}
+          			}" liveChange="enableOperation"/>
+					<Label text="{i18n>Global}" required="true" />
+					<Select selectedKey="{GLOBAL}">
+						<core:Item key="0" text="{i18n>No}" />
+						<core:Item key="1" text="{i18n>Yes}" />
+					</Select>
+            </f:content>
+        </f:SimpleForm>
+        </content>
+            <beginButton>
+                <Button 
+                        text="{i18n>save}"
+                        press="onHierConfigPopupSave" />
+            </beginButton>
+            <endButton>
+                <Button 
+                        text="{i18n>close}" 
+                        press="onHierConfigPopupClose" />
+            </endButton>
+    </Dialog>
+</core:FragmentDefinition>

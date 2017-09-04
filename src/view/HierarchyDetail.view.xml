@@ -1,0 +1,126 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns:core="sap.ui.core"
+          controllerName="com.siemens.hierarchymaintenance.controller.HierarchyDetail"
+          displayBlock="true"
+          xmlns:l="sap.ui.layout"
+          xmlns:ui="sap.ui.table"
+          xmlns="sap.m">
+    <Page
+           	id="hierarchyDetail"
+            busy="{mainView>/busy}"
+            busyIndicatorDelay="{mainView>/delay}"
+            navButtonPress="onNavBack" 
+            showNavButton="true"
+            title="{i18n>pageTitle}">
+            <headerContent>
+            </headerContent>
+        <content>
+        <ui:Table id="idHierarchyDetTable"
+        class="sapUiResponsiveContentPadding"
+        enableCellFilter="true"
+        enableBusyIndicator="true"
+        selectionMode="Single"
+		showNoData="true"
+        rows="{HIER_DETAILS}"
+        visibleRowCountMode="Auto">
+        <ui:toolbar>
+        <OverflowToolbar>
+        <ToolbarSpacer/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>copy}"
+                        type="Transparent"
+                        icon="sap-icon://duplicate"
+                        press="onPressCopy"/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>upload}"
+                        type="Transparent"
+                        icon="sap-icon://upload"
+                        press="onPressUpload"/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>add}"
+                        type="Transparent"
+                        icon="sap-icon://add"
+                        press="onPressAdd"/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>edit}"
+                        type="Transparent"
+                        icon="sap-icon://edit"
+                        press="onPressEdit"/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>delete}"
+                        type="Transparent"
+                        icon="sap-icon://delete"
+                        press="onPressDelete"/>
+                    <OverflowToolbarButton
+                        tooltip="{i18n>clear}"
+                        type="Transparent"
+                        icon="sap-icon://undo"
+                        press="onPressClear"/>
+        </OverflowToolbar>
+        </ui:toolbar>
+            
+        <ui:columns>
+            <ui:Column
+                width="12rem"
+                hAlign="Center"
+                filterProperty="HIERARCHY_ID"
+                filterType="sap.ui.model.type.Integer"
+                sortProperty="HIERARCHY_ID">
+                <Text text="{i18n>hierarchy_id}" />
+                <ui:template>
+                <Text text="{HIERARCHY_ID}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                hAlign="Center"
+                filterProperty="NODE_ID"
+                filterType="sap.ui.model.type.Integer"
+                sortProperty="NODE_ID">
+                <Text text="{i18n>node_id}" />
+                <ui:template>
+                <Text
+                        text="{NODE_ID}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                hAlign="Center"
+                filterProperty="PARENT_NODE_ID"
+                filterType="sap.ui.model.type.Integer"
+                sortProperty="PARENT_NODE_ID">
+                <Text text="{i18n>parent_node_id}" />
+                <ui:template>
+                <Text
+                        text="{PARENT_NODE_ID}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                filterProperty="NODE_NAME"
+                filterType="sap.ui.model.type.String"
+                sortProperty="NODE_NAME"
+                hAlign="Center">
+                <Text text="{i18n>node_name}" />
+                <ui:template>
+                <Text
+                        text="{NODE_NAME}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                hAlign="Center"
+                filterProperty="PARENT_NODE_NAME"
+                filterType="sap.ui.model.type.String"
+                sortProperty="PARENT_NODE_NAME">
+                <Text text="{i18n>parent_node_name}" />
+                <ui:template>
+                <Text
+                        text="{PARENT_NODE_NAME}" />
+                </ui:template>
+            </ui:Column>
+        </ui:columns>
+
+    </ui:Table>
+
+        </content>
+        <footer>
+        </footer>
+    </Page>
+</mvc:View>

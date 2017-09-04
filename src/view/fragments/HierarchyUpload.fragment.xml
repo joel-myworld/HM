@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
+   <Dialog id="HierDetUploadDialog" title="{HIERARCHY_NAME}" class="sapUiPopupWithPadding">
+      <content>
+         <u:FileUploader id="fileUploader" uploadUrl="/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/HierarchyFileUpload.xsjs" 
+         name="myFileUpload" width="50rem" tooltip="{i18n>uploadTooltip}" typeMissmatch="handleTypeMissmatch" 
+         style="Emphasized" fileType="csv,xls,xlsx" uploadComplete="handleUploadComplete" placeholder="{i18n>uploadPlaceholder}" />
+      </content>
+      <beginButton>
+         <Button text="{i18n>upload}" press="handleUploadPress" />
+      </beginButton>
+      <endButton>
+         <Button text="{i18n>close}" press="onPopupClose" />
+      </endButton>
+   </Dialog>
+</core:FragmentDefinition>

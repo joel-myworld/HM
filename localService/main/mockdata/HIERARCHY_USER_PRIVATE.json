@@ -1,0 +1,12 @@
+{
+    "d": {
+        "results": [{
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_USER_PRIVATEType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_USER_PRIVATE(GID='Z003R0FB',HIERARCHY_ID=1)"
+            },
+            "GID": "Z003R0FB",
+            "HIERARCHY_ID": 1
+        }]
+    }
+}

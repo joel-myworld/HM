@@ -1,0 +1,49 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:l="sap.ui.layout"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:core="sap.ui.core">
+    <Dialog
+            id="HierDetPopupDialog" 
+            title="{= ${NODE_NAME} ? ${NODE_NAME} : 'New Node' }"
+            class="sapUiPopupWithPadding">
+        <content>
+
+    <f:SimpleForm id="SimpleForm"
+            minWidth="1024"
+            maxContainerCols="4"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanL="3"
+            labelSpanM="3"
+            emptySpanL="4"
+            emptySpanM="4"
+            columnsL="2"
+            columnsM="2"
+            class="editableForm">
+            <f:content>
+                <Label text="{i18n>hierarchy_id}" />
+                <Input value="{HIERARCHY_ID}" enabled="false" />
+                <Label text="{i18n>node_id}" required="true" />
+                <Input value="{NODE_ID}" enabled="false"/>
+                <Label text="{i18n>parent_node_id}" />
+                <Input value="{PARENT_NODE_ID}" enabled="false" />
+                <Label text="{i18n>node_name}" required="true"/>
+                <Input value="{NODE_NAME}" />
+                <Label text="{i18n>parent_node_name}" />
+                <Input value="{PARENT_NODE_NAME}" valueHelpOnly="true" showValueHelp="true" valueHelpRequest="onPressValueHelp"/>
+            </f:content>
+        </f:SimpleForm>
+        </content>
+            <beginButton>
+                <Button 
+                        text="{i18n>save}" 
+                        press="onSaveOrCreate" />
+            </beginButton>
+            <endButton>
+                <Button 
+                        text="{i18n>close}" 
+                        press="onPopupClose" />
+            </endButton>
+    </Dialog>
+</core:FragmentDefinition>

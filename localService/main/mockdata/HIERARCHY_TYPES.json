@@ -1,0 +1,19 @@
+{
+    "d": {
+        "results": [{
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_TYPESType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_TYPES(1)"
+            },
+            "HIERARCHY_TYPE_ID": 1,
+            "HIERARCHY_TYPE": "PARENT-CHILD"
+        }, {
+            "__metadata": {
+                "type": "siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_TYPESType",
+                "uri": "https://hanadatalake-eh0.siemens.com/siemens/COMMON_DEV/xs/services/hierarchyMaintenance/main.xsodata/HIERARCHY_TYPES(2)"
+            },
+            "HIERARCHY_TYPE_ID": 2,
+            "HIERARCHY_TYPE": "LEVEL"
+        }]
+    }
+}

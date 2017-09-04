@@ -1,0 +1,179 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns:core="sap.ui.core"
+          controllerName="com.siemens.hierarchymaintenance.controller.HierarchyDefinition"
+          displayBlock="true"
+          xmlns:l="sap.ui.layout"
+          xmlns="sap.m"
+          xmlns:ui="sap.ui.table"
+		  xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Page
+            id="hierarchyDefinition"
+            busy="{mainView>/busy}"
+            busyIndicatorDelay="{mainView>/delay}"
+            navButtonPress="onNavBack" 
+            showNavButton="true"
+            title="{i18n>pageTitle}">
+            <headerContent>
+            </headerContent>
+        <content>
+
+        <ui:Table id="idHierarchyTable"
+        class="sapUiResponsiveContentPadding"
+        title="{i18n>hierDefPageTitle}"
+        selectionMode="Single"
+		selectionBehavior="RowSelector"
+		enableBusyIndicator="true"
+        enableCellFilter="true"
+		rowSelectionChange="onRowSelectionChange"
+        rows="{/HIERARCHY_DEFINITION}"
+        visibleRowCountMode="Auto">    
+        <ui:toolbar>
+        <OverflowToolbar>
+        <ToolbarSpacer/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>copy}"
+                        type="Transparent"
+                        icon="sap-icon://duplicate"
+                        press="onPressCopy"/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>add}"
+                        type="Transparent"
+                        icon="sap-icon://add"
+                        press="onPressAdd"/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>edit}"
+                        type="Transparent"
+                        icon="sap-icon://edit"
+                        press="onPressEdit"/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>delete}"
+                        type="Transparent"
+                        enabled="false"
+                        icon="sap-icon://delete"
+                        press="onPressDelete"/>
+                <OverflowToolbarButton
+                        tooltip="{i18n>clear}"
+                        type="Transparent"
+                        icon="sap-icon://undo"
+                        press="onPressClear"/>
+        </OverflowToolbar>
+        </ui:toolbar>
+        <ui:columns>
+            <ui:Column
+               width="8rem"
+                hAlign="Center"
+                filterProperty="HIERARCHY_ID"
+                filterType="sap.ui.model.type.Integer"
+                sortProperty="HIERARCHY_ID">
+                <Text text="{i18n>hierarchy_id}" />
+                <ui:template>
+                <Text text="{HIERARCHY_ID}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="16rem"
+                hAlign="Center"
+                filterProperty="HIERARCHY_NAME"            
+                sortProperty="HIERARCHY_NAME">
+                <Text text="{i18n>hierarchy_name}" />
+                <ui:template>
+                <Text text="{HIERARCHY_NAME}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="8rem"
+                hAlign="Center"
+                filterProperty="SYST"
+                sortProperty="SYST">
+                <Text text="{i18n>system}" />
+                <ui:template>
+                <Text text="{SYST}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+            width="8rem"
+                hAlign="Center"
+                filterProperty="MANDT"
+                sortProperty="MANDT">
+                <Text text="{i18n>client}" />
+                <ui:template>
+                <Text text="{MANDT}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+            width="8rem"
+                hAlign="Center"
+                filterProperty="ARE"
+                sortProperty="ARE">
+                <Text text="{i18n>are}" />
+                <ui:template>
+                <Text text="{ARE}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                width="10rem"
+                hAlign="Center"
+                filterProperty="HIERARCHY_TYPE_ID"
+                filterType="sap.ui.model.type.Integer"
+                sortProperty="HIERARCHY_TYPE_ID">
+                <Text text="{i18n>hierarchy_type}" />
+                <ui:template>
+                <Text text="{path: 'HIERARCHY_TYPE_ID',formatter:'.formatter.checkHierarchy'}" />
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                hAlign="Center"
+                width="8rem"
+                filterProperty="IS_PRIVATE"
+                filterType="sap.ui.model.type.Integer"
+                sortProperty="IS_PRIVATE">
+                <Text text="{i18n>private}" />
+                <ui:template>
+                <Text text="{path:'IS_PRIVATE',formatter:'.formatter.checkPrivate'}" /> 
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                hAlign="Center"
+                width="8rem"
+                filterProperty="GLOBAL"
+                filterType="sap.ui.model.type.Integer"
+                sortProperty="GLOBAL">
+                <Text text="{i18n>global}" />
+                <ui:template>
+                <Text text="{path:'GLOBAL',formatter:'.formatter.checkPrivate'}" /> 
+                </ui:template>
+            </ui:Column>
+            <ui:Column
+                hAlign="Center"
+                width="8rem"
+                filterProperty="PROJECT"
+                sortProperty="PROJECT">
+                <Text text="{i18n>project}" />
+                <ui:template>
+                <Text text="{PROJECT}" /> 
+                </ui:template>
+            </ui:Column>
+			<ui:Column width="10rem" hAlign="Center">
+				<Label text="{i18n>details}" />
+	 				<ui:template>
+						<Button text="{i18n>showDetails}" press="onHierarchyDetail" data:hid="{HIERARCHY_ID}"/>
+					</ui:template>
+			</ui:Column>
+        </ui:columns>
+
+    </ui:Table>
+    
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Text
+                        text="{i18n>copyright}"/>
+                <Link
+                        text="{i18n>version}"
+                        target="_blank"
+                        href="https://wiki.siemens.com/x/u4W4Aw"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

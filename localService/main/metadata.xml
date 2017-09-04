@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+   <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" Namespace="siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main">
+         <EntityType Name="HIERARCHYType">
+            <Key>
+               <PropertyRef Name="HIERARCHY_ID" />
+               <PropertyRef Name="NODE_ID" />
+            </Key>
+            <Property Name="HIERARCHY_ID" Type="Edm.Int32" Nullable="false" />
+            <Property Name="NODE_ID" Type="Edm.Int32" Nullable="false" />
+            <Property Name="PARENT_NODE_ID" Type="Edm.Int32" />
+            <Property Name="NODE_NAME" Type="Edm.String" Nullable="false" MaxLength="100" />
+            <Property Name="PARENT_NODE_NAME" Type="Edm.String" MaxLength="100" />
+         </EntityType>
+         <EntityType Name="HIERARCHY_DEFINITIONType">
+            <Key>
+               <PropertyRef Name="HIERARCHY_ID" />
+            </Key>
+            <Property Name="HIERARCHY_ID" Type="Edm.Int32" Nullable="false" />
+            <Property Name="HIERARCHY_NAME" Type="Edm.String" Nullable="false" MaxLength="100" />
+            <Property Name="SYST" Type="Edm.String" MaxLength="5" />
+            <Property Name="MANDT" Type="Edm.String" MaxLength="3" />
+            <Property Name="ARE" Type="Edm.String" MaxLength="4" />
+            <Property Name="HIERARCHY_TYPE_ID" Type="Edm.Int32" Nullable="false" />
+            <Property Name="IS_PRIVATE" Type="Edm.Int32" />
+            <NavigationProperty Name="HIER_DETAILS" Relationship="siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIER_DETAILType" FromRole="HIERARCHY_DEFINITIONPrincipal" ToRole="HIERARCHYDependent" />
+         </EntityType>
+         <EntityType Name="HIERARCHY_TYPESType">
+            <Key>
+               <PropertyRef Name="HIERARCHY_TYPE_ID" />
+            </Key>
+            <Property Name="HIERARCHY_TYPE_ID" Type="Edm.Int32" Nullable="false" />
+            <Property Name="HIERARCHY_TYPE" Type="Edm.String" Nullable="false" MaxLength="100" />
+         </EntityType>
+         <EntityType Name="HIERARCHY_USER_PRIVATEType">
+            <Key>
+               <PropertyRef Name="GID" />
+               <PropertyRef Name="HIERARCHY_ID" />
+            </Key>
+            <Property Name="GID" Type="Edm.String" Nullable="false" MaxLength="10" />
+            <Property Name="HIERARCHY_ID" Type="Edm.Int32" Nullable="false" />
+         </EntityType>
+         <Association Name="HIER_DETAILType">
+            <End Type="siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_DEFINITIONType" Role="HIERARCHY_DEFINITIONPrincipal" Multiplicity="1" />
+            <End Type="siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHYType" Role="HIERARCHYDependent" Multiplicity="*" />
+         </Association>
+         <EntityContainer Name="main" m:IsDefaultEntityContainer="true">
+            <EntitySet Name="HIERARCHY" EntityType="siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHYType" />
+            <EntitySet Name="HIERARCHY_DEFINITION" EntityType="siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_DEFINITIONType" />
+            <EntitySet Name="HIERARCHY_TYPES" EntityType="siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_TYPESType" />
+            <EntitySet Name="HIERARCHY_USER_PRIVATE" EntityType="siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIERARCHY_USER_PRIVATEType" />
+            <AssociationSet Name="HIER_DETAIL" Association="siemens.COMMON_DEV.xs.services.hierarchyMaintenance.main.HIER_DETAILType">
+               <End Role="HIERARCHY_DEFINITIONPrincipal" EntitySet="HIERARCHY_DEFINITION" />
+               <End Role="HIERARCHYDependent" EntitySet="HIERARCHY" />
+            </AssociationSet>
+         </EntityContainer>
+      </Schema>
+   </edmx:DataServices>
+</edmx:Edmx>
